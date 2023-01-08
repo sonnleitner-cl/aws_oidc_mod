@@ -1,0 +1,40 @@
+
+name: Pipeline
+on:
+  push
+env:
+  AWS_REGION : "us-west-2"
+
+permissions:
+      id-token: write   # This is required for requesting the JWT
+      contents: write   # Needded by semantic-release push tags
+jobs:
+  Pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git clone the repository
+        uses: actions/checkout@v3
+
+      # - name: configure aws credentials
+      #   uses: aws-actions/configure-aws-credentials@v1
+      #   with:
+      #     role-to-assume: arn:aws:iam::614031743044:role/oidc-role-github
+      #     role-session-name: samplerolesession
+      #     aws-region: ${{ env.AWS_REGION }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 'lts/*'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Release
+        run: npx semantic-release
+
+      - name: 'Deploy'
+        run: |
+          cd example
+          terraform init
+          terraform validate

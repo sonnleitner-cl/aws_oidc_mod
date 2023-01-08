@@ -1,0 +1,6 @@
+fileignoreconfig:
+- filename: example/.terraform.lock.hcl
+  checksum: 871b4d7255f190d94b7a4804833e6e8f88dc278bc1cf0184369f995064926e6f
+- filename: package-lock.json
+  checksum: 435fb1093fcba79df5dc69ded51d0c41006b1c3036f10b1143d824dd5297ebcf
+version: ""

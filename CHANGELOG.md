@@ -1,5 +1,17 @@
 # Semantic Versioning Changelog
 
+# [2.0.0](https://github.com/sonnleitner-cl/aws_oidc_mod/compare/v1.0.0...v2.0.0) (2023-01-26)
+
+
+### Features
+
+* split role and openid provider ([d5833c3](https://github.com/sonnleitner-cl/aws_oidc_mod/commit/d5833c39e6aa5c6057758fd8fea5ea8958669f34))
+
+
+### BREAKING CHANGES
+
+* the openid provider will not be created
+
 # 1.0.0 (2023-01-08)
 
 

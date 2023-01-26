@@ -20,3 +20,7 @@ variable "policy_name" {
 variable "actions_for_policy" {
   type = list(string)
 }
+variable "openid_connect_provider_arn" {
+  description = "arn del openid para github"
+  type        = string
+}

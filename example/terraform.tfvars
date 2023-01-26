@@ -11,6 +11,7 @@ actions_for_policy = [
   "ec2:*",
   "eks:*"
 ]
-org_to_authorize    = "sonnleitner-cl"
-repo_to_authorize   = "aws_oidc"
-branch_to_authorize = "main"
+org_to_authorize            = "sonnleitner-cl"
+repo_to_authorize           = "aws_oidc"
+branch_to_authorize         = "main"
+openid_connect_provider_arn = "arn:aws:iam::614031743044:oidc-provider/token.actions.githubusercontent.com"

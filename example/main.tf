@@ -19,14 +19,15 @@ provider "tls" {
 }
 
 module "oidc" {
-  source              = "../"
-  role_name           = var.role_name
-  role_description    = var.role_description
-  policy_name         = var.policy_name
-  actions_for_policy  = var.actions_for_policy
-  org_to_authorize    = var.org_to_authorize
-  repo_to_authorize   = var.repo_to_authorize
-  branch_to_authorize = var.branch_to_authorize
+  source                      = "../"
+  role_name                   = var.role_name
+  role_description            = var.role_description
+  policy_name                 = var.policy_name
+  actions_for_policy          = var.actions_for_policy
+  org_to_authorize            = var.org_to_authorize
+  repo_to_authorize           = var.repo_to_authorize
+  branch_to_authorize         = var.branch_to_authorize
+  openid_connect_provider_arn = var.openid_connect_provider_arn
 }
 
 variable "role_name" {
@@ -50,4 +51,8 @@ variable "policy_name" {
 }
 variable "actions_for_policy" {
   type = list(string)
+}
+variable "openid_connect_provider_arn" {
+  description = "arn del openid para github"
+  type        = string
 }
